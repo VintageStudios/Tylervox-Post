@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set</title>
+
+    <style>
+        /* 80s-inspired color palette */
+        :root {
+            --bg: linear-gradient(135deg, #1b1b2f, #162447);
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --neon-green: #4ae261;
+            --neon-blue: #4a90e2;
+            --lilac: #b57edc;
+            --text-light: #e6e6e6;
+            --text-muted: #b8b8b8;
+        }
+
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 40px;
+            color: var(--text-light);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.6rem;
+            color: var(--lilac);
+            margin-bottom: 40px;
+            text-shadow: 0 0 8px var(--lilac);
+            letter-spacing: 1px;
+        }
+
+        /* Scrolling banner blockquote */
+        blockquote {
+            background: var(--card-bg);
+            border-left: 5px solid var(--neon-green);
+            padding: 15px 0;
+            margin: 20px auto;
+            width: 90%;
+            font-style: italic;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(74, 226, 97, 0.3);
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            color: transparent; /* hides the static text */
+        }
+
+        blockquote::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 100%;
+            animation: scrollBanner 12s linear infinite;
+            padding-left: 20px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        @keyframes scrollBanner {
+            0% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        .note {
+            background: var(--card-bg);
+            padding: 25px 30px;
+            margin: 40px auto;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+        }
+
+        .note h2 {
+            margin-top: 0;
+            color: var(--neon-blue);
+            font-size: 1.7rem;
+            text-shadow: 0 0 6px var(--neon-blue);
+        }
+
+        .note h4 {
+            margin: 5px 0 15px 0;
+            font-weight: normal;
+            font-size: 1rem;
+            color: var(--lilac);
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 6px var(--lilac);
+        }
+
+        .note p {
+            margin: 10px 0;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        date {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello and welcome to my website!</h1>
+
+    <blockquote data-text="Hello and welcome to the Developer release [v1.0] these below are posts.">
+        Hello and welcome to the Developer release [v1.0] these below are posts.
+    </blockquote>
+
+    <div class="note">
+        <h2>Welcome note [Developer Release]</h2>
+        <h4>By: Auto Poster</h4>
+        <p>Welcome this you are viewing are posts created by developers, or by our automated system.</p>
+        <date>3/14/2026 [@4:23 PM] UCT</date>
+    </div>
+
+    <div class="note">
+        <h2>Notice</h2>
+        <h4>By: Tyler O.</h4>
+        <p>This is a note that some posts uploaded by [Auto Poster] may be AI generated based off of official release commands.</p>
+        <date>3/14/2026 [@4:38 PM] UCT</date>
+    </div>
+</body>
+</html>
